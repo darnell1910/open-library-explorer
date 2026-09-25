@@ -1,0 +1,49 @@
+@let title = book().hasTitle ? book().title : ('book-card.untitled' | translate);
+
+<mat-card class="book-card" appearance="outlined">
+  @if (book().hasCover) {
+    <img mat-card-image
+         class="book-cover"
+         [src]="book().coverUrlAsString"
+         [alt]="'book-card.cover-alt' | translate: { title }"
+         [loading]="eagerCoverLoading() ? 'eager' : 'lazy'"/>
+  } @else {
+    <div class="book-cover book-cover-placeholder"
+         role="img"
+         [attr.aria-label]="'book-card.cover-unavailable' | translate: { title }">
+      <mat-icon aria-hidden="true">menu_book</mat-icon>
+    </div>
+  }
+
+  <mat-card-header>
+    <h2 mat-card-title class="book-title">{{ title }}</h2>
+  </mat-card-header>
+
+  <mat-card-content>
+    <dl class="book-attributes">
+      <div class="book-attribute">
+        <dt>{{ authorsLabelKey() | translate }}</dt>
+        <dd>{{ book().hasAuthors ? book().authorNamesAsText : ('book-card.unknown-author' | translate) }}</dd>
+      </div>
+      <div class="book-attribute">
+        <dt>{{ 'book-card.first-publish-year' | translate }}</dt>
+        <dd>{{ book().hasFirstPublishYear ? book().firstPublishYear : ('book-card.not-available' | translate) }}</dd>
+      </div>
+      <div class="book-attribute">
+        <dt>{{ 'book-card.edition-count' | translate }}</dt>
+        <dd>{{ book().editionCount }}</dd>
+      </div>
+    </dl>
+  </mat-card-content>
+
+  <mat-card-actions class="book-card-actions" align="start">
+    <a matButton="filled"
+       [href]="book().detailsUrlAsString"
+       target="_blank"
+       rel="noopener noreferrer"
+       [attr.aria-label]="'book-card.details-aria-label' | translate: { title }">
+      <mat-icon aria-hidden="true">open_in_new</mat-icon>
+      {{ 'book-card.details' | translate }}
+    </a>
+  </mat-card-actions>
+</mat-card>

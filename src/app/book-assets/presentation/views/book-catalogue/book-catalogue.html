@@ -1,0 +1,38 @@
+@let categoryLabel = ('book-categories.' + selectedCategory().id) | translate;
+
+<section class="book-catalogue" aria-labelledby="book-catalogue-title">
+  <header class="book-catalogue-header">
+    <h1 id="book-catalogue-title" class="book-catalogue-title">{{ 'book-catalogue.title' | translate }}</h1>
+    <app-book-category-selector
+      [categories]="categories"
+      [selectedCategory]="selectedCategory()"
+      (categorySelected)="onCategorySelected($event)"/>
+  </header>
+
+  <div class="book-catalogue-content" [attr.aria-busy]="loadStatus() === 'loading'">
+    @switch (loadStatus()) {
+      @case ('loading') {
+        <mat-progress-bar mode="indeterminate" [attr.aria-label]="'book-catalogue.loading' | translate"/>
+        <p class="status-message" role="status">{{ 'book-catalogue.loading' | translate }}</p>
+      }
+      @case ('failed') {
+        <div class="status-message" role="alert">
+          <p>{{ 'book-catalogue.load-error' | translate }}</p>
+          <button matButton="outlined" type="button" (click)="retryLoading()">
+            <mat-icon aria-hidden="true">refresh</mat-icon>
+            {{ 'book-catalogue.retry' | translate }}
+          </button>
+        </div>
+      }
+      @case ('loaded') {
+        @if (books().length > 0) {
+          <app-book-list
+            [books]="books()"
+            [listLabel]="'book-catalogue.book-list-label' | translate: { category: categoryLabel }"/>
+        } @else {
+          <p class="status-message" role="status">{{ 'book-catalogue.empty' | translate }}</p>
+        }
+      }
+    }
+  </div>
+</section>

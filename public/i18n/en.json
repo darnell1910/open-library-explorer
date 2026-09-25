@@ -1,0 +1,43 @@
+{
+  "toolbar": {
+    "title": "Open Library Explorer",
+    "logo-alt": "Open Library logo"
+  },
+  "language-switcher": {
+    "label": "Interface language",
+    "languages": {
+      "en": "EN, English",
+      "es": "ES, Spanish"
+    }
+  },
+  "book-catalogue": {
+    "title": "Book Catalogue",
+    "category-selector-label": "Book category",
+    "book-list-label": "{{category}} books",
+    "loading": "Loading books…",
+    "load-error": "The books could not be loaded. Please check your connection and try again.",
+    "retry": "Try again",
+    "empty": "No books were found for this category."
+  },
+  "book-categories": {
+    "software-engineering": "Software Engineering",
+    "artificial-intelligence": "Artificial Intelligence"
+  },
+  "book-card": {
+    "cover-alt": "Cover of the book {{title}}",
+    "cover-unavailable": "Cover not available for the book {{title}}",
+    "untitled": "Untitled book",
+    "author": "Author",
+    "authors": "Authors",
+    "unknown-author": "Unknown author",
+    "first-publish-year": "First published",
+    "edition-count": "Editions",
+    "not-available": "Not available",
+    "details": "Book Details",
+    "details-aria-label": "Book Details: {{title}} (opens in a new tab)"
+  },
+  "footer": {
+    "copyright": "Copyright © 2026 Open Library. All rights reserved.",
+    "developed-by": "Developed by"
+  }
+}

@@ -1,0 +1,65 @@
+:host {
+  display: flex;
+  flex: 1 1 auto;
+  width: 100%;
+}
+
+.book-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow: hidden;
+}
+
+.book-cover {
+  width: 100%;
+  height: 300px;
+  margin: 0;
+  object-fit: contain;
+  background-color: var(--mat-sys-surface-container);
+}
+
+.book-cover-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--mat-sys-on-surface-variant);
+}
+
+.book-cover-placeholder mat-icon {
+  width: 72px;
+  height: 72px;
+  font-size: 72px;
+}
+
+.book-title {
+  margin: 8px 0 0;
+  overflow-wrap: anywhere;
+}
+
+.book-attributes {
+  margin: 12px 0 0;
+}
+
+.book-attribute {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  gap: 8px;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--mat-sys-outline-variant);
+}
+
+.book-attribute dt {
+  font: var(--mat-sys-label-large);
+  color: var(--mat-sys-on-surface-variant);
+}
+
+.book-attribute dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.book-card-actions {
+  margin-top: auto;
+  padding: 16px;
+}

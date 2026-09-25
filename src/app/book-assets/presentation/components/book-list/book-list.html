@@ -1,0 +1,7 @@
+<ul class="book-list" role="list" [attr.aria-label]="listLabel() || null">
+  @for (book of books(); track book.key) {
+    <li class="book-list-item">
+      <app-book-card [book]="book" [eagerCoverLoading]="$index < eagerCoverCount"/>
+    </li>
+  }
+</ul>

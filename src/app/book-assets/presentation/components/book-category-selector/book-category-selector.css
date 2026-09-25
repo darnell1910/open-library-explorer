@@ -1,0 +1,19 @@
+:host {
+  display: block;
+  max-width: 100%;
+}
+
+.category-selector {
+  max-width: 100%;
+}
+
+@media (max-width: 599.98px) {
+  .category-selector {
+    display: flex;
+    width: 100%;
+  }
+
+  .category-selector mat-button-toggle {
+    flex: 1 1 0;
+  }
+}

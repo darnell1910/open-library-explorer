@@ -1,0 +1,43 @@
+{
+  "toolbar": {
+    "title": "Open Library Explorer",
+    "logo-alt": "Logo de Open Library"
+  },
+  "language-switcher": {
+    "label": "Idioma de la interfaz",
+    "languages": {
+      "en": "EN, Inglés",
+      "es": "ES, Español"
+    }
+  },
+  "book-catalogue": {
+    "title": "Catálogo de Libros",
+    "category-selector-label": "Categoría de libros",
+    "book-list-label": "Libros de {{category}}",
+    "loading": "Cargando libros…",
+    "load-error": "No se pudieron cargar los libros. Verifique su conexión e inténtelo de nuevo.",
+    "retry": "Reintentar",
+    "empty": "No se encontraron libros para esta categoría."
+  },
+  "book-categories": {
+    "software-engineering": "Ingeniería de Software",
+    "artificial-intelligence": "Inteligencia Artificial"
+  },
+  "book-card": {
+    "cover-alt": "Portada del libro {{title}}",
+    "cover-unavailable": "Portada no disponible para el libro {{title}}",
+    "untitled": "Libro sin título",
+    "author": "Autor",
+    "authors": "Autores",
+    "unknown-author": "Autor desconocido",
+    "first-publish-year": "Primera publicación",
+    "edition-count": "Ediciones",
+    "not-available": "No disponible",
+    "details": "Detalles del libro",
+    "details-aria-label": "Detalles del libro: {{title}} (se abre en una nueva pestaña)"
+  },
+  "footer": {
+    "copyright": "Copyright © 2026 Open Library. Todos los derechos reservados.",
+    "developed-by": "Desarrollado por"
+  }
+}
